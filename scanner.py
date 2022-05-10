@@ -1,4 +1,3 @@
-from venv import create
 from util.create_transition_table import create_transition_table
 from util.token_dict import create_token_dict
 
