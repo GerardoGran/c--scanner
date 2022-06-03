@@ -1,11 +1,11 @@
-/* A program to perform selection sort on a 
+/* A program @ to perform selection sort on a 
 10 element array */ 
  
 int x[10]; 
  
 int minILoC(int a[], int low, int high){ 
   int i; int x; int k; 
- 
+
    k = low; 
    x = a[low]; 
    i = low + 1; 

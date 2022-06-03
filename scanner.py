@@ -27,6 +27,9 @@ error_messages = ['Invalid Char', 'Identifiers cannot have numbers',
 # scanner output
 scanner_output = []
 
+# lines of symbols
+lines = []
+
 # empty number and identifier tables
 number_symbol_table = []
 identifier_symbol_table = []
@@ -52,7 +55,6 @@ def identify_char(char: str) -> str:
     elif char.isdigit():
         return "digit"
 
-    # TODO: check if whitespace are ALWAYS delim
     elif char in whitespace:
         return "delim"
 
@@ -66,7 +68,7 @@ def identify_char(char: str) -> str:
 # when called as a module, run whole program
 if __name__ == "__main__":
     # file name, change here
-    code_file_name = "test/test9.txt"
+    code_file_name = "test/test2.txt"
     code = open(code_file_name)
 
     # initialize current identifier and state
@@ -121,6 +123,9 @@ if __name__ == "__main__":
 
                 # remove last char from identifier
                 identifier = identifier[:-1]
+
+            # append line for token for parser use
+            lines.append(line)
 
             # check if identifier is word
             if state == 10:
